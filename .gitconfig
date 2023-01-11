@@ -1,0 +1,5 @@
+[user]
+   name = jpnmatoso
+   email = jpnmatoso@gmail.com
+[credential]
+   helper = store --file ~/.git-credentials
