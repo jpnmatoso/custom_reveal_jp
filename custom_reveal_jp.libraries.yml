@@ -3,14 +3,7 @@ global-styling:
   css:
     theme:
       /libraries/reveal.js/dist/reveal.css: {}
-      # css/revealjs.css: {}
-
 global-scripts:
   version: 1.x
   js:
     /libraries/reveal.js/dist/reveal.js: {}
-    # js/revealjs.js: {}
-  # dependencies:
-  #   - core/jquery
-  #   - core/jquery.once
-  #   - core/drupalSettings

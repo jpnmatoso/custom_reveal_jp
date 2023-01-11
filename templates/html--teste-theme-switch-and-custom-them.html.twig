@@ -38,25 +38,12 @@
   </head>
   {# <body{{ attributes }}> #}
   <body>
-    {#
-      Keyboard navigation/accessibility link to main content section in
-      page.html.twig.
-    #}
-    {# <a href="#main-content" class="visually-hidden focusable">
-      {{ 'Skip to main content'|t }}
-    </a> #}
-
-    {# {{ page_top }} #}
     <div class="reveal">
     <div class="slides">
     {{ page }}
     </div>
     </div>
-    {# {{ page_bottom }} #}
 
-    {# {{ content }} #}
-    {# {{ attach_library('/libraries/reveal.js/dist/reveal.js') }}
-    <js-bottom-placeholder token="{{ placeholder_token }}"> #}
     <script src="/libraries/reveal.js/dist/reveal.js"></script>
 		<script src="/libraries/reveal.js/plugin/zoom/zoom.js"></script>
 		<script src="/libraries/reveal.js/plugin/notes/notes.js"></script>
