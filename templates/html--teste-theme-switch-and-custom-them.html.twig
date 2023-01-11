@@ -31,8 +31,7 @@
     {# <head-placeholder token="{{ placeholder_token }}"> #}
     <title>{{ head_title|safe_join(' | ') }}</title>
     {# <css-placeholder token="{{ placeholder_token }}">
-    <js-placeholder token="{{ placeholder_token }}">
-    {{ attach_library('/libraries/reveal.js/dist/reveal.css') }} #}
+    <js-placeholder token="{{ placeholder_token }}"> #}
     <link rel="stylesheet" href="/libraries/reveal.js/dist/reset.css">
     <link rel="stylesheet" href="/libraries/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="/libraries/reveal.js/dist/theme/black.css" id="theme">
@@ -59,7 +58,6 @@
     {# {{ attach_library('/libraries/reveal.js/dist/reveal.js') }}
     <js-bottom-placeholder token="{{ placeholder_token }}"> #}
     <script src="/libraries/reveal.js/dist/reveal.js"></script>
-    {# <script src="dist/reveal.js"></script> #}
 		<script src="/libraries/reveal.js/plugin/zoom/zoom.js"></script>
 		<script src="/libraries/reveal.js/plugin/notes/notes.js"></script>
 		<script src="/libraries/reveal.js/plugin/search/search.js"></script>
@@ -80,8 +78,5 @@
 			});
 
 		</script>
-    {# <script>
-			Reveal.initialize();
-		</script> #}
   </body>
 </html>
