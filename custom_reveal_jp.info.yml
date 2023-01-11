@@ -1,0 +1,13 @@
+name: Custom Theme Reveal - JP
+type: theme
+description: This is a fluffy sub theme of Stable 9
+core_version_requirement: ^8 || ^9 || ^10
+# Defines the base theme
+base theme: false
+# Defines libraries group in which we can add CSS/JS.
+libraries:
+  - custom_reveal_jp/global-styling
+  - custom_reveal_jp/global-scripts
+# Regions, quote the names
+regions:
+  content: 'Content'

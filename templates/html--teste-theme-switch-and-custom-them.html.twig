@@ -1,0 +1,87 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    {# <head-placeholder token="{{ placeholder_token }}"> #}
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    {# <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
+    {{ attach_library('/libraries/reveal.js/dist/reveal.css') }} #}
+    <link rel="stylesheet" href="/libraries/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="/libraries/reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="/libraries/reveal.js/dist/theme/black.css" id="theme">
+  </head>
+  {# <body{{ attributes }}> #}
+  <body>
+    {#
+      Keyboard navigation/accessibility link to main content section in
+      page.html.twig.
+    #}
+    {# <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a> #}
+
+    {# {{ page_top }} #}
+    <div class="reveal">
+    <div class="slides">
+    {{ page }}
+    </div>
+    </div>
+    {# {{ page_bottom }} #}
+
+    {# {{ content }} #}
+    {# {{ attach_library('/libraries/reveal.js/dist/reveal.js') }}
+    <js-bottom-placeholder token="{{ placeholder_token }}"> #}
+    <script src="/libraries/reveal.js/dist/reveal.js"></script>
+    {# <script src="dist/reveal.js"></script> #}
+		<script src="/libraries/reveal.js/plugin/zoom/zoom.js"></script>
+		<script src="/libraries/reveal.js/plugin/notes/notes.js"></script>
+		<script src="/libraries/reveal.js/plugin/search/search.js"></script>
+		<script src="/libraries/reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="/libraries/reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+    {# <script>
+			Reveal.initialize();
+		</script> #}
+  </body>
+</html>
