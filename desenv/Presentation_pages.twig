@@ -1,0 +1,88 @@
+
+{# Custom text field #1 #}
+
+{% if has_children == "Yes" %}
+   <section>
+
+      {# Presentation page da própria view com child #}
+      {% if field_background_type == "Color" %}
+
+      <section data-background-color="{{ field_bg_color }}">
+
+      {% elseif field_background_type == "Gradient" %}
+
+      <section data-background-gradient="linear-gradient(to bottom, {{ field_bg_color }}, {{ field_bg_color_2 }})">
+
+      {% elseif field_background_type == "Image" %}
+
+      <section data-background-image="{{ field_media_image }}" data-background-position="{{ field_bg_image_position }}" data-background-size="{{ field_bg_image_size }}" data-background-repeat="{{ field_bg_image_repeat }}">
+
+      {% elseif field_background_type == "Video" %}
+
+      <section data-background-video="{{ field_media_video_file }}" {{ field_bg_video_loop }} {{ field_bg_video_muted }} data-background-size="{{ field_bg_video_size }}" data-background-opacity="{{ field_bg_video_opacity }}">
+
+      {% elseif field_background_type == "Iframe" %}
+
+      <section data-background-iframe="{{ field_bg_iframe_url }}" {{ field_bg_iframe_interactive }}>
+
+      {% else %}
+      <section>
+      {% endif %}
+
+{# End - Custom text field #1 #}
+
+
+
+      {# {{ field_presentation_body }} #}
+
+
+{# Custom text field #2 #}
+      </section>
+
+      {# FIM - Presentation page da própria view com child #}
+
+        {# Páginas filhas embutidas pelo bloco #}
+        {{ drupal_view('presentation_pages_sort', 'block_1', nid) }}
+
+   </section>
+
+{% else %}
+
+      {# Presentation Pages sem Child #}
+      {% if field_background_type == "Color" %}
+
+      <section data-background-color="{{ field_bg_color }}">
+
+      {% elseif field_background_type == "Gradient" %}
+
+      <section data-background-gradient="linear-gradient(to bottom, {{ field_bg_color }}, {{ field_bg_color_2 }})">
+
+
+      {% elseif field_background_type == "Image" %}
+
+      <section data-background-image="{{ field_media_image }}" data-background-position="{{ field_bg_image_position }}" data-background-size="{{ field_bg_image_size }}" data-background-repeat="{{ field_bg_image_repeat }}">
+
+      {% elseif field_background_type == "Video" %}
+
+      <section data-background-video="{{ field_media_video_file }}" {{ field_bg_video_loop }} {{ field_bg_video_muted }} data-background-size="{{ field_bg_video_size }}" data-background-opacity="{{ field_bg_video_opacity }}">
+
+      {% elseif field_background_type == "Iframe" %}
+
+      <section data-background-iframe="{{ field_bg_iframe_url }}" {{ field_bg_iframe_interactive }}>
+
+      {% else %}
+      <section>
+      {% endif %}
+{# End - Custom text field #2 #}
+
+
+      {# {{ field_presentation_body }} #}
+
+
+
+{# Custom text field #3 #}
+      </section>
+
+
+{% endif %}
+{# End - Custom text field #3 #}
