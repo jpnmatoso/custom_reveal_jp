@@ -25,19 +25,20 @@
  * @ingroup themeable
  */
 #}
+{# JP #}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
-    {# <head-placeholder token="{{ placeholder_token }}"> #}
+    <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
-    {# <css-placeholder token="{{ placeholder_token }}">
-    <js-placeholder token="{{ placeholder_token }}"> #}
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
     <link rel="stylesheet" href="/libraries/reveal.js/dist/reset.css">
     <link rel="stylesheet" href="/libraries/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="/libraries/reveal.js/dist/theme/white.css" id="theme">
   </head>
-  {# <body{{ attributes }}> #}
-  <body>
+  <body{{ attributes }}>
+  {# <body> #}
     <div class="reveal">
     <div class="slides">
     {{ page }}
@@ -65,5 +66,6 @@
 			});
 
 		</script>
+    <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>
